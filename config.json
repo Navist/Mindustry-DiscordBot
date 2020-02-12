@@ -1,0 +1,9 @@
+{
+	"discordToken": "",
+	"host": "localhost",
+	"port": "6859",
+	"modRoles": [""],
+	"notAllowed": ["exit", "js", "host", "difficulty", "rules", "admin", "admins", "unadmin", "kick", "ban"],
+	"absolutelyNotAllowed": ["stop", "exit", "js", "host", "difficulty", "rules", "admin"],
+	"owner": ""
+}
