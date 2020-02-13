@@ -20,3 +20,6 @@ prefix - This is the prefix you would like your bot to use. Default is "."
 This bot requires Python 3.6 to function. 
 URL to all python-366 downloads. https://www.python.org/downloads/release/python-366/ 
 Direct download link: https://www.python.org/ftp/python/3.6.6/python-3.6.6-amd64.exe 
+
+Discord.py is also required. If you have pip installed use: 
+py -3 -m pip install -U discord.py
