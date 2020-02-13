@@ -23,27 +23,29 @@ class moderation(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    async def permissionsChecker(self, author):
+    async def permissionsChecker(self, ctx):
+        author = ctx.message.author
         for role in author.roles:
             if str(role.id) in modRoles:
                 return True
 
-    @commands.command(name='console', pass_context=True, help='Runs commands to the servers console through the open socket.')
-    async def console(self, ctx, command):
+    @commands.command(name='console', pass_context=True, help='Taps into the server console.')
+    async def console(self, ctx, *command):
         author = ctx.message.author
-        moderator = await self.permissionsChecker(author)
+        command = " ".join(command)
+        moderator = await self.permissionsChecker(ctx)
         if len(notAllowed) == 0:
             await ctx.send("This command is not available for use until you've configured the notAllowed list inside the config.json.")
             return
         for x in absolutelyNotAllowed:
-            if x in command and str(author.id) != owner:
+            if (x in command or x == command) and str(author.id) != owner:
                 await ctx.message.delete()
                 msg = await ctx.send("{}, You do not have permission to use this command.".format(author.mention))
                 await asyncio.sleep(4)
                 await msg.delete()
                 return
         for x in notAllowed: 
-            if x in command and str(author.id) != owner and moderator != True:
+            if (x in command or x == command) and str(author.id) != owner and moderator != True:
                 await ctx.message.delete()
                 msg = await ctx.send("{}, You do not have permission to use this command.".format(author.mention))
                 await asyncio.sleep(4)
@@ -69,7 +71,7 @@ class moderation(commands.Cog):
                 if len(sendOne) == 0:
                     pass
                 else:
-                    await ctx.send(sendOne)    
+                    await ctx.send(sendOne)
 
 
 def setup(client):
