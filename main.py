@@ -27,7 +27,7 @@ EXTENSIONS = ['moderation']
 @client.event
 async def on_ready():
     timeFormatted = datetime.datetime.now().strftime('@%H:%M:%S%p')
-    print('-- ECN Bot Initializing --')
+    print('-- {} Initializing --'.format(client.user.name))
     print('-- %s --' % timeFormatted)
     for extension in EXTENSIONS:
         try:
