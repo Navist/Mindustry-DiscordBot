@@ -61,15 +61,16 @@ class moderation(commands.Cog):
                 while True:
                     msg = sock.recv(1024)
                     returnMessage.append(msg.decode())
-        except Exception:
+        except socket.timeout:
             lengthReturn = len(returnMessage)
             while lengthReturn != 0:
                 sendOne = "".join(returnMessage[0:10])
                 del returnMessage[0:10]
+                lengthReturn = len(returnMessage)
                 if len(sendOne) == 0:
                     pass
                 else:
-                    await ctx.send(sendOne)        
+                    await ctx.send(sendOne)      
 
 
 def setup(client):
