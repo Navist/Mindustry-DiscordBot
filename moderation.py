@@ -63,13 +63,13 @@ class moderation(commands.Cog):
         except socket.timeout:
             lengthReturn = len(returnMessage)
             while lengthReturn != 0:
-                sendOne = "".join(returnMessage[0:10])
-                del returnMessage[0:10]
+                sendOne = "".join(returnMessage[0:4])
+                del returnMessage[0:4]
                 lengthReturn = len(returnMessage)
                 if len(sendOne) == 0:
                     pass
                 else:
-                    await ctx.send(sendOne)      
+                    await ctx.send(sendOne)    
 
 
 def setup(client):
