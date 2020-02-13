@@ -23,3 +23,6 @@ Direct download link: https://www.python.org/ftp/python/3.6.6/python-3.6.6-amd64
 
 Discord.py is also required. If you have pip installed use: 
 py -3 -m pip install -U discord.py
+
+If you need to install pip you can from here:
+python -m pip install -U pip
