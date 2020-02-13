@@ -1,0 +1,2 @@
+botConfig.json
+Start_Bot.bat

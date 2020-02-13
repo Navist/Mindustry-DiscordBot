@@ -1,5 +1,5 @@
 @echo off
-@title ECN-Bot
+@title Discord Bot
 echo Starting..
 :main
 python main.py
