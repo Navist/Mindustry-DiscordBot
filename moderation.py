@@ -29,7 +29,6 @@ class moderation(commands.Cog):
                 return True
 
     @commands.command(name='console', pass_context=True, help='Runs commands to the servers console through the open socket.')
-    @commands.has_permissions(administrator=True)
     async def console(self, ctx, command):
         author = ctx.message.author
         moderator = await self.permissionsChecker(author)
