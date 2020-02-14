@@ -73,6 +73,7 @@ class moderation(commands.Cog):
                     pass
                 else:
                     await ctx.send(sendOne)
+            await ctx.send("Console readout complete.")
 
 
 def setup(client):

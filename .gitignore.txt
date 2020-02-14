@@ -1,2 +1,4 @@
 botConfig.json
+config.json
 Start_Bot.bat
+.gitignore.txt
