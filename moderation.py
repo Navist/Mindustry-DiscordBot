@@ -40,17 +40,11 @@ class moderation(commands.Cog):
             return
         for x in absolutelyNotAllowed:
             if x in command and str(author.id) != owner:
-                await ctx.message.delete()
                 msg = await ctx.send("{}, You do not have permission to use this command.".format(author.mention))
-                await asyncio.sleep(4)
-                await msg.delete()
                 return
         for x in notAllowed: 
             if x in command and str(author.id) != owner and moderator != True:
-                await ctx.message.delete()
                 msg = await ctx.send("{}, You do not have permission to use this command.".format(author.mention))
-                await asyncio.sleep(4)
-                await msg.delete()
                 return
         command = " ".join(command)
         command = '{}\n'.format(command).encode()
