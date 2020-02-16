@@ -57,7 +57,7 @@ class moderation(commands.Cog):
                 sock.send(command)
                 while True:
                     msg = sock.recv(1024)
-                    returnMessage.append(msg.decode('ascii'))
+                    returnMessage.append(msg.decode('utf-8'))
         except socket.timeout:
             lengthReturn = len(returnMessage)
             while lengthReturn != 0:
@@ -69,7 +69,7 @@ class moderation(commands.Cog):
                     pass
                 else:
                     await ctx.send(sendOne)
-            await ctx.send("**Console readout complete.**")
+            await ctx.send("**End**")
 
 
 def setup(client):
