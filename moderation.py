@@ -37,6 +37,9 @@ class moderation(commands.Cog):
 
     @commands.command(name='consoled', pass_context=True, help='Runs commands, delayed, to the servers console through the open socket.')
     async def consoled(self, ctx, *command):
+        mess = await ctx.send("Be warned! This is the delayed version of the command.\nIf you want the no-delay version use `console`.")
+        await asyncio.sleep(4)
+        await mess.delete()
         try:
             await asyncio.sleep(int(commandDelay))
         except:
