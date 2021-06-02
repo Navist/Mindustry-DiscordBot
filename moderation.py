@@ -33,7 +33,7 @@ class moderation(commands.Cog):
 
     @commands.command(name='console', pass_context=True, help='Runs commands to the servers console through the open socket.')
     async def console(self, ctx, *command):
-        await self.consoleCommands(command)
+        await self.consoleCommands(ctx, command)
 
     @commands.command(name='consoled', pass_context=True, help='Runs commands, delayed, to the servers console through the open socket.')
     async def console(self, ctx, *command):
@@ -41,9 +41,9 @@ class moderation(commands.Cog):
             await asyncio.sleep(int(commandDelay))
         except:
             print("It looks like you put something in this config that can't be turned into an int. Use a number and try again.")
-        await self.consoleCommands(command)
+        await self.consoleCommands(ctx, command)
 
-    async def consoleCommands(self, *command):
+    async def consoleCommands(self, ctx, command):
         regex = r"(\[)(..)(m?)"
         author = ctx.message.author
         moderator = await self.permissionsChecker(ctx)
