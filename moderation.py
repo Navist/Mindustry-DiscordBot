@@ -35,6 +35,8 @@ class moderation(commands.Cog):
         regex = r"(\[)(..)(m?)"
         author = ctx.message.author
         moderator = await self.permissionsChecker(ctx)
+        if ctx.guild.id == 374718301063872542:
+            await asyncio.sleep(30)
         if len(notAllowed) == 0:
             await ctx.send("This command is not available for use until you've configured the notAllowed list inside the config.json.")
             return
