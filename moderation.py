@@ -33,7 +33,7 @@ class moderation(commands.Cog):
 
     @commands.command(name='console', pass_context=True, help='Runs commands to the servers console through the open socket.')
     async def console(self, ctx, *command):
-        await self.consoleCommands(*command)
+        await self.consoleCommands(command)
 
     @commands.command(name='consoled', pass_context=True, help='Runs commands, delayed, to the servers console through the open socket.')
     async def console(self, ctx, *command):
