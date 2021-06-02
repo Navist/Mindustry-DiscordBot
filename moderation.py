@@ -36,7 +36,7 @@ class moderation(commands.Cog):
         await self.consoleCommands(ctx, command)
 
     @commands.command(name='consoled', pass_context=True, help='Runs commands, delayed, to the servers console through the open socket.')
-    async def console(self, ctx, *command):
+    async def consoled(self, ctx, *command):
         try:
             await asyncio.sleep(int(commandDelay))
         except:
