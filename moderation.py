@@ -83,7 +83,7 @@ class moderation(commands.Cog):
                 if len(sendOne) == 0:
                     pass
                 else:
-                    await ctx.send(sendOne)
+                    await ctx.send(f"```{sendOne}```")
             await ctx.send("**End**")    
             
             
